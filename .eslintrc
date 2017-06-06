@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "react/jsx-filename-extension": "off"
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}
