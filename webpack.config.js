@@ -1,8 +1,8 @@
-const { resolve } = require('path');
-const webpack = require('webpack');
+const { resolve } = require('path')
+const webpack = require('webpack')
 
-const srcDir = resolve(__dirname, 'src');
-const distDir = resolve(__dirname, 'dist');
+const srcDir = resolve(__dirname, 'src')
+const distDir = resolve(__dirname, 'dist')
 
 module.exports = {
   context: distDir,
@@ -10,35 +10,35 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './index.js',
+    './index.js'
   ],
   output: {
     filename: 'bundle.js',
     path: distDir,
-    publicPath: '/',
+    publicPath: '/'
   },
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
     contentBase: distDir,
-    publicPath: '/',
+    publicPath: '/'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: ['babel-loader'],
-        exclude: /node_modules/,
-      },
-    ],
+        exclude: /node_modules/
+      }
+    ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin()
   ],
   resolve: {
     alias: {
-      '~components': resolve(srcDir, 'components'),
-    },
-  },
-};
+      '~components': resolve(srcDir, 'components')
+    }
+  }
+}
