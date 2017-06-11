@@ -24,13 +24,11 @@ module.exports = {
     publicPath: '/'
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: ['babel-loader'],
-        exclude: /node_modules/
-      }
-    ]
+    rules: [{
+      test: /\.js$/,
+      use: ['babel-loader'],
+      exclude: /node_modules/
+    }]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
